@@ -11,34 +11,22 @@
     <property name="autoIncrement" value="true"/>
 
 
-    <changeSet id="00000000000002" author="samson">
-        <createTable tableName="Brother">
-            <column name="rollNumber" type="smallint">
+    <changeSet id="00000000000004" author="samson">
+        <createTable tableName="Pledge">
+            <column name="firstName" type="varchar(20)">
                 <constraints primaryKey="true" nullable="false"/>
             </column>
-            <column name="firstName" type="varchar(20)"/>
             <column name="middleName" type="varchar(20)"/>
-            <column name="lastName" type="varchar(20)"/>
+            <column name="lastName" type="varchar(20)">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
             <column name="major" type="varchar(40)"/>
             <column name="gradYear" type="year(4)"/>
-            <!-- position column should be moved to a new table -->
-            <column name="position" type="varchar(40)"/>
-            <column name="active" type="bit"/>
-            <column name="username" type="varchar(32)"/>
             <column name="nickname" type="varchar(50)"/>
             <column name="class" type="varchar(25)"/>
             <column name="homestate" type="varchar(50)"/>
             <column name="hometown" type="varchar(25)"/>
             <column name="email" type="varchar(100)"/>
-            <column name="rtime" type="int(20)"/>
-            <column name="address" type="varchar(100)"/>
-            <column name="city" type="varchar(20)"/>
-            <column name="state" type="varchar(2)"/>
-            <column name="country" type="varchar(25)"/>
-            <column name="zip" type="int(10)"/>
-            <column name="phone" type="bigint(20)"/>
-            <column name="studentMember" type="bit"/>
-            <column name="webmaster" type="bit"/>
             <column name="preferredName" type="varchar(50)"/>
             <column name="big" type="int(11)"/>
 
@@ -51,9 +39,9 @@
                                  referencedTableName="Brother"/>-->
 
         <loadData encoding="UTF-8"
-                  file="config/liquibase/brothers.csv"
+                  file="config/liquibase/pledges.csv"
                   separator=";"
-                  tableName="Brother">
+                  tableName="Pledge">
         </loadData>
     </changeSet>
 </databaseChangeLog>
